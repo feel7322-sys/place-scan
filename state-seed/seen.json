@@ -1,0 +1,16 @@
+{
+  "updated": "2026-06-30",
+  "note": "Google Drive의 place-scan/seen.json 으로 업로드. 매 실행 시 읽고 갱신됨.",
+  "cities": [
+    "Bihar (India)",
+    "Wankaner/Morbi, Gujarat (India)",
+    "Catania/Sicily (Italy)",
+    "Nairobi (Kenya)"
+  ],
+  "companies": [
+    "Husk Power Systems",
+    "Mitticool",
+    "Orange Fiber",
+    "Sanergy / Regen Organics"
+  ]
+}
