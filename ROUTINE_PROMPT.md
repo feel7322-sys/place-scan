@@ -40,7 +40,13 @@
 5. Google Drive place-scan/reports/ 아래에 **오늘 폴더를 새로 만든다**:
    폴더명 = "{오늘 날짜} — {기업1(도시1)·기업2(도시2)}"
    (예: 2026-07-01 — Sistema.bio(멕시코시티)·Natura(상파울루)).
-   그 폴더 안에 완성된 리포트를 {오늘 날짜}.md 로 저장한다.
+   그 폴더 안에 리포트를 **두 형식으로** 저장한다:
+   - `{오늘 날짜}.md` (마크다운)
+   - `{오늘 날짜}.docx` (MS Word) — 저장소 `tools/md_to_docx.py`로 변환한다:
+     `python -m pip install --quiet python-docx` 후
+     `python tools/md_to_docx.py {오늘 날짜}.md {오늘 날짜}.docx`, 생성된 .docx를 base64로
+     Drive 업로드(contentMimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+     disableConversionToGoogleType=true). 변환이 안 되면 같은 내용을 Google 문서로 저장한다.
 6. 이번에 다룬 도시·기업을 직전 목록에 병합해 place-scan/seen-{오늘 날짜}.json을
    **새로 생성**한다(기존 파일 덮어쓰기 아님 — Drive 커넥터에 update/delete 없음).
 7. 재무필터를 통과한 기업이 0건이면: 메일 제목과 폴더명 끝에 "(검증 필요만)"을 붙이고

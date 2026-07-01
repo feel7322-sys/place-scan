@@ -60,7 +60,8 @@ place-based 혁신을 구현하고 **재무성과가 확인되는** 창업기업
     (없으면 시드 `seen.json`), **쓰기** = 직전 목록에 이번 신규분을 병합해
     `seen-YYYY-MM-DD.json`을 **새로 생성**(덮어쓰지 않음)한다. 옛 날짜 파일은 무시(수동 정리 가능).
   - `reports/{YYYY-MM-DD} — {기업1(도시1)·기업2(도시2)}/` : 당일 폴더를 만들고 그 안에
-    `{YYYY-MM-DD}.md` 로 리포트 저장(폴더명에 날짜+사례가 보이게).
+    `{YYYY-MM-DD}.md`(마크다운)와 `{YYYY-MM-DD}.docx`(MS Word) **두 형식**으로 리포트 저장.
+    docx는 `tools/md_to_docx.py`로 변환(폴더명에 날짜+사례가 보이게).
 - 발송 : **Gmail 커넥터**로 운영자 본인 주소(feel7322@gmail.com)에 **가독성 HTML 카드형**으로 보낸다.
   루틴 생성 시 Gmail(gmailmcp.googleapis.com)이 자동 첨부되며, 쓰기 도구가 `create_draft`뿐이라
   실제로는 **초안(draft)** 이 만들어진다(Gmail 앱에서 열람·발송). 리포트는 위 Drive 날짜 폴더에도 저장한다.
