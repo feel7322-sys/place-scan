@@ -18,7 +18,9 @@
 .claude/commands/place-scan.md, .claude/commands/yunmun.md, STYLE.md를 먼저 읽고 그 규칙을 그대로 따른다.
 
 절차:
-1. Google Drive의 place-scan/seen.json을 읽는다. 없으면 빈 목록으로 시작한다.
+1. Google Drive place-scan/에서 seen 상태를 읽는다(최신본 읽기 방식):
+   `seen`으로 시작하는 파일 중 날짜가 가장 최신인 것(예: seen-YYYY-MM-DD.json)을 읽고,
+   없으면 시드 seen.json을, 그것도 없으면 빈 목록으로 시작한다.
 2. place-scan.md 절차를 수행한다. 조사는 insane-search를 기본 사용(미가용 시 내장 웹검색 폴백).
    seen.json의 도시·기업은 제외한다.
    재무필터를 엄격히 적용한다 — 출처 URL 없는 재무근거는 불채택, [약]은 제외.
@@ -29,7 +31,8 @@
    - 제목: [Place-Based Scan] {오늘 날짜} — {대상 도시/기업}
    - 본문: 완성된 리포트 전문
 5. Google Drive place-scan/reports/{오늘 날짜}.md 로 리포트를 저장한다.
-6. 이번에 다룬 도시·기업을 seen.json에 추가해 place-scan/seen.json을 갱신(덮어쓰기)한다.
+6. 이번에 다룬 도시·기업을 직전 목록에 병합해 place-scan/seen-{오늘 날짜}.json을
+   **새로 생성**한다(기존 파일 덮어쓰기 아님 — Drive 커넥터에 update/delete 없음).
 7. 재무필터를 통과한 기업이 0건이면: 메일 제목 끝에 "(검증 필요만)"을 붙여
    검증 필요 목록만 보내고, seen.json은 갱신하지 않는다.
 
