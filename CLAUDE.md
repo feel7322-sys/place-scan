@@ -64,6 +64,8 @@ place-based 혁신을 구현하고 **재무성과가 확인되는** 창업기업
     docx는 `tools/md_to_docx.py`로 변환(폴더명에 날짜+사례가 보이게).
 - 발송 : **Gmail 커넥터**로 운영자 본인 주소(feel7322@gmail.com)에 **가독성 HTML 카드형**으로 보낸다.
   루틴 생성 시 Gmail(gmailmcp.googleapis.com)이 자동 첨부되며, 쓰기 도구가 `create_draft`뿐이라
-  실제로는 **초안(draft)** 이 만들어진다(Gmail 앱에서 열람·발송). 리포트는 위 Drive 날짜 폴더에도 저장한다.
+  실제로는 **초안(draft)** 이 만들어진다. 초안은 운영자 계정의 Apps Script
+  (`tools/apps_script_auto_sender.gs`, 시간 트리거)가 `[Place-Based Scan]` 제목 접두어를 보고
+  **자동 발송**하므로 제목 접두어를 유지한다. 리포트는 위 Drive 날짜 폴더에도 저장한다.
 - 조사 : **`insane-search`를 기본 도구로** 사용한다. 사용 불가 환경이면 **내장 웹검색/페치로 폴백**한다.
 - 문구 다듬기 : 초안 작성 후 **한글 윤문 교정 스킬 `/yunmun`을 반드시 적용**해 AI 번역투·어색한 표현을 교정한다. 문체 기준은 `STYLE.md`.

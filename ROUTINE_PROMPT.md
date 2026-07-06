@@ -42,6 +42,8 @@
    - 본문: **가독성 HTML 카드형** — 상단 요약(채택 N건/검증 N건) + 기업별 카드
      (위치·유형·재무강도 배지, 라벨/값 표, 출처 링크) + 검증 필요 목록. 홍보성 형용사 금지.
    - Gmail 커넥터가 발송 도구 없이 초안 생성(create_draft)만 지원하면 **초안(draft)** 으로 만든다.
+     (초안이어도 무방 — 운영자 계정의 Apps Script(`tools/apps_script_auto_sender.gs`)가
+     `[Place-Based Scan]` 제목 초안을 주기적으로 자동 발송한다. 제목 접두어를 바꾸지 말 것.)
 5. Google Drive place-scan/reports/ 아래에 **오늘 폴더를 새로 만든다**:
    폴더명 = "{오늘 날짜} — {기업1(도시1)·기업2(도시2)}"
    (예: 2026-07-01 — Sistema.bio(멕시코시티)·Natura(상파울루)).
